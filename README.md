@@ -1,5 +1,5 @@
 # Zoomdot 리눅스 개발환경 셋팅
 
 
-vim,
+vim
 oh-my-zsh
