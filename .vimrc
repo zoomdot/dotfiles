@@ -17,13 +17,18 @@ set hlsearch number
 set smartcase ignorecase
 
 set laststatus=2
-set noet
 
 let &lcs="tab:|-,trail:-"
 set list
 set cursorline
 
-autocmd FileType python set tabstop=4 shiftwidth=0 softtabstop=-1 noet
+set linebreak
+let &showbreak='+>>> '
+if has('patch-7.4.352')
+	set breakindent "breakindentopt
+endif
+
+autocmd FileType python set tabstop=4 shiftwidth=0 softtabstop=-1
 autocmd BufWritePre *
 	\  let [s:old_search, s:stay_view] = [@/, winsaveview()]
 	\| silent! execute '%s;\s\+$;;e'
