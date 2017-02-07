@@ -83,10 +83,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+#
+
+if [[ -f "$HOME/.pyenv" ]]; then
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+fi
 alias ll="ls -al"
 
 export LS_OPTIONS="--color"
