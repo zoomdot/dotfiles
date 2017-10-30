@@ -84,8 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-
-if [[ -f "$HOME/.pyenv" ]]; then
+export PYENV_ROOT="$HOME/.pyenv"
+if [[ -d "$HOME/.pyenv/" ]]; then
 	export PATH="$PYENV_ROOT/bin:$PATH"
 	eval "$(pyenv init -)"
 	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
